@@ -1,0 +1,453 @@
+/*CSS*/
+
+body{
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2;
+    background-color: white center center repeat;
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {
+  width: 80%;
+  margin: auto;
+  background: #fff;
+  overflow: hidden;
+  padding: 15px;
+}
+
+/*Globales*/
+h1{
+  font-size: 3.8rem;
+}
+
+h2{
+  font-size: 3.4rem;
+}
+
+h3{
+  font-size: 3rem;
+}
+
+h4{
+  font-size: 2.6rem;
+}
+
+/*Imágenes*/
+
+/*Imágenes index*/
+.academy{
+  width: 1800px;
+  height: auto;
+}
+
+
+/*Header*/
+.site-header{
+  background: linear-gradient(to right,#82009f 0%,#5d34af 50%,#00ceab 100%);
+  background-size: cover;
+  background-position: center center;
+  max-height: fit-content;
+}
+
+.barra{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 50px;
+    align-items: center;
+    padding-top: 5px;
+    margin-left: 4em;
+}
+
+/*LOGO*/
+.logoTitle{
+	color: white;
+  font-family: 'BebasNeueRegular';
+  font-size: 2.5em;
+  -webkit-text-stroke: 0.1px black;
+
+}
+
+/*Navegación*/
+.navegacion a {
+color: white;
+font-size: 30px;
+margin-right: 20px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.navegacion a:hover{
+    color: black;
+    font-size: 200%;
+}
+.navegacion a:last-of-type{
+    margin: 0;
+}
+
+/*Texto Slogan*/
+.tp-highred {
+  color: #f7345e;
+  background: linear-gradient(-107deg,#82009f 0%,#f7345e 100%);
+  transform: skewX(-10deg);
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1em;
+  font-weight: 700;
+  text-transform: capitalize;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/*Texto Bienvenidos*/
+
+.typewriter h1 {
+  color: black;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+
+/*Main*/
+.principal{
+    font-size: 28px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 120rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+/* Button INDEX*/
+.button-51 {
+  background-color: transparent;
+  border: 1px solid #266DB6;
+  box-sizing: border-box;
+  color: #00132C;
+  font-family: "Avenir Next LT W01 Bold",sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-51:hover,
+.button-51:active {
+  outline: 0;
+}
+
+.button-51:hover {
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 200%;
+}
+
+.button-51:before {
+  background-color: #D5EDF6;
+  content: "";
+  height: calc(100% + 3px);
+  position: absolute;
+  right: -7px;
+  top: -9px;
+  transition: background-color 300ms ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+.button-51:hover:before {
+  background-color: #6DCFF6;
+}
+
+@media (min-width: 768px) {
+  .button-51 {
+    padding: 16px 32px;
+  }
+}
+
+/*Iconos Usuarios*/
+.encabezado-usuarios{
+  font-weight: 300;
+  text-align: center;
+}
+
+.iconos-usuarios{
+   display: flex;
+   justify-content: space-between;
+   max-width: 120rem;
+   margin: 0 auto;
+   margin-top: 2rem;
+   margin-bottom: 2rem;
+   font-size: 20px;
+}
+
+
+.icono{
+  /*flex-basis: 200px;*/
+  flex-basis: calc(33.3% - 1rem);
+  text-align: center;
+}
+
+.icono h3{
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+/*Sin ser hover, cómo se puede poner todos iconos igual?
+.icono:hover{
+  flex-basis: calc(35% - 1rem);
+}*/
+
+/*Iconos Usuarios*/
+.encabezado-usuarios{
+  font-weight: 300;
+  text-align: center;
+}
+
+.iconos-usuarios{
+   display: flex;
+   justify-content: space-between;
+   max-width: 120rem;
+   margin: 0 auto;
+   margin-top: 2rem;
+   margin-bottom: 2rem;
+   font-size: 20px;
+}
+
+.icono{
+  /*flex-basis: 200px;*/
+  flex-basis: calc(33.3% - 1rem);
+  text-align: center;
+}
+
+.icono h3{
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+
+/*Login*/
+
+.bodyInput{
+	background: linear-gradient(to right,#82009f 0%,#5d34af 50%,#00ceab 100%);;
+	background-position: center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+	min-height:100vh;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-center{
+	color: black;
+  font-family: 'Lato', sans-serif;
+    font-size: 38px;
+    font-weight: bolder;
+    margin: -20px 0 25px 0;
+    display: block;
+    text-align: center;
+}
+.box{
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+    background-color: white;
+	border-radius:3px;
+	padding:70px 100px;
+}
+.input-container{
+	position:relative;
+	margin-bottom:25px;
+}
+.input-container label{
+	position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:black;	
+  pointer-event:none;
+	transition: all 0.5s ease-in-out;
+}
+.input-container input{ 
+  border:0;
+  border-bottom:1px solid #555;  
+  background:transparent;
+  width:100%;
+  padding:8px 0 5px 0;
+  font-size:16px;
+  color: black;
+}
+.input-container input:focus{ 
+ border:none;	
+ outline:none;
+ border-bottom:1px solid #e74c3c;	
+}
+.btn{
+	color: black;
+	background-color:#e74c3c;
+	outline: none;
+    border: 0;
+    color: black;
+	padding:10px 20px;
+	text-transform:uppercase;
+	margin-top:50px;
+	border-radius:2px;
+	cursor:pointer;
+	position:relative;
+}
+/*.btn:after{
+	content:"";
+	position:absolute;
+	background:rgba(0,0,0,0.50);
+	top:0;
+	right:0;
+	width:100%;
+	height:100%;
+}*/
+.input-container input:focus ~ label,
+.input-container input:valid ~ label{
+	top:-12px;
+	font-size:12px;
+	
+}
+.passForgot{
+	color: #E60026;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 0 0 0 200px;
+  display: block;
+  text-align: center;
+}
+
+.passForgot:hover{
+  color: #E60026;
+  text-decoration: underline;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 0 0 0 200px;
+  display: block;
+  text-align: center;
+}
+
+.noAccount{
+	color: black;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.noAccount:hover{
+	color: #662d91;
+  text-decoration: underline;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  text-align: center;
+}
+
+
+.hasAccount{	
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.hasAccount:hover{
+  color: #662d91;
+  text-decoration: underline;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.agree{
+  color: black;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  display: block;
+  text-align: center;
+}
+
+
+/* Button Login & Register */
+.button-22 {
+  align-items: center;
+  appearance: button;
+  background-color: #0276FF;
+  border-radius: 8px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: "RM Neue",sans-serif;
+  font-size: 75%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 10px 21px;
+  text-align: center;
+  text-transform: none;
+  width: 400px;
+  transition: color .13s ease-in-out;
+  transition: background .13s ease-in-out;
+  transition: opacity .13s ease-in-out;
+  transition: box-shadow .13s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-22:active {
+  background-color: #006AE8;
+}
+
+.button-22:hover {
+  background-color: #1C84FF;
+}
+
+/*Register*/
