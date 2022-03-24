@@ -12,35 +12,43 @@
 </head>
 <body class="bodyInput">
     
-    <form>
+    <form action="registro.php" method="post">
         <main class="box">     
                 <span class="text-center">Register</span>
+                <div class="input-container">		
+                    <input type="text" name="username" id="username" required=""/>
+                    <label>Nombre de usuario</label>
+                </div>
+                <div class="input-container">		
+                    <input type="password" name="password" id="password" required=""/>
+                    <label>Password</label>
+                </div>                
             <div class="input-container">		
-                <input type="text" name="name" required=""/>
+                <input type="text" name="name" id="name" required=""/>
                 <label>Nombre</label>
             </div>
             <div class="input-container">		
-                <input type="text" name="lastname" required=""/>
+                <input type="text" name="surname" id="surname" required=""/>
                 <label>Apellido</label>
             </div>
             <div class="input-container">
                 <input type="email" name="email" required=""/>
                 <label>Email</label>
             </div>
-            <div class="input-container">
-                <input type="password" name="pwd" required=""/>
-                <label>Password</label>
+            <div class="input-container">		
+                <input type="text" name="telephone" id="telephone" required=""/>
+                <label>Teléfono</label>
             </div>
-            <div class="input-container">
-                <input type="password" name="pwdrepeat" required=""/>
-                <label>Repeat Password</label>
+            <div class="input-container">		
+                <input type="text" name="nif" id="nif" required=""/>
+                <label>Nif</label>
             </div>
             <div class="agree">
                 <input type="checkbox" id="cbox1" value="checkbox">
                 <label> I agree with PHProgrammer Academy <a class="hasAccount" href="https://www.youtube.com/watch?v=HJXailvE17g">Terms of use</a></label>
             </div>
             <br>
-            <button type="button" class="button-22" name="submit">Register Now</button>
+            <button type="submit" class="button-22" name="submit">Registrarse</button>
             <p class="agree">¿Ya tienes una cuenta? <a class="hasAccount" href="login.html">Sign in</a></p>
         </main>
     </form>
