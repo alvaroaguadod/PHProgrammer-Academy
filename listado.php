@@ -4,6 +4,13 @@ include("include/nivel.php");
 include("include/menu.php");
 include("include/funciones.php");
 if ( !isset($_GET) AND !isset($_GET["tabla"]) ){echo "No se han recibido los parámetros necesarios";exit;};
+$campos=array();
+$campos["students"]=array("identificador","usuario","Correo electrónico","Nombre","Apellido","Teléfomo","Nif","Fecha de registro");
+$campos["courses"]=array("id_course","name","description","date_start","date_end","active");
+$valores=array();
+$valores["students"]=array("id","username","email","name","surname","telephone","nif","date_registered");
+$valores["courses"]=array("id_course","name","description","date_start","date_end","active");
+
 ?>
 <script>
     $(document).ready(function() {
@@ -15,15 +22,14 @@ if ( !isset($_GET) AND !isset($_GET["tabla"]) ){echo "No se han recibido los par
 <table id="listado" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
-                <th>id</th>
-                <th>username</th>
-                <th>pass</th>
-                <th>email</th>
-                <th>name</th>
-                <th>surname</th>
-                <th>telephone</th>
-                <th>nif</th>
-                <th>fecha registro</th>
+                <?php
+               
+                foreach ($campos[$_GET["tabla"]] as $valor) {
+                    
+                    echo"<th>".$valor."</th>";
+                    
+                }
+                ?>
             </tr>
         </thead>
         <tbody>
@@ -35,15 +41,14 @@ while ($row = $result->fetch_assoc()) {
 ?>
 
             <tr>
-                <td><a href="ficha.php?tabla=students&id=<?php echo $row["id"];?>"><?php echo $row["id"];?></a></td>
-                <td><?php echo $row["username"];?></td>
-                <td><?php echo $row["pass"];?></td>
-                <td><?php echo $row["email"];?></td>
-                <td><?php echo $row["name"];?></td>
-                <td><?php echo $row["surname"];?></td>
-                <td><?php echo $row["telephone"];?></td>
-                <td><?php echo $row["nif"];?></td>
-                <td><?php echo $row["date_registered"];?></td>              
+                <?php
+                $contador=0;
+                foreach ($valores[$_GET["tabla"]] as $valor) {
+                    if ($contador==0){echo"<td><a href='ficha.php?tabla=".$_GET["tabla"]."&id=".$row[$valor]."'>".$row[$valor]."</a></td>";}
+                    else {echo"<td>".$row[$valor]."</td>";};
+                    $contador++;
+                }
+                ?>            
 </tr>
 
 <?php    
