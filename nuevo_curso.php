@@ -2,11 +2,22 @@
  include("header.php");
  include("include/nivel.php");
  include("include/menu.php");
+ include("include/funciones.php");
   if (isset($_POST["entrando"]) AND $_POST["entrando"]=="s"){
     $db = conectarse();
-  $sentencia="INSERT INTO courses (name, description, date_start, date_end, active) VALUES ('".$_POST["name"]."', '".$_POST["description"]."', '".$_POST["date_start"]."', '".$_POST["date_end"]."', '".$_POST["active"]."') ";
+   
+  $active = isset($_POST['active']) ? $_POST['active'] : false;
+  if($active == 's'){
+    $active = 1;
+  }
+  if ($active == 'n'){
+    $active = 0;
+  }
+  $sentencia = "INSERT INTO courses (name, description, date_start, date_end, active) VALUES ('".$_POST["name"]."', '".$_POST["description"]."', '".$_POST["date_start"]."', '".$_POST["date_end"]."', '$active') ";
+  
   //echo $sentencia;
   $result = $db->query($sentencia);
+  var_dump($result);
   echo "Se ha registrado el curso ".$_POST["name"];
   exit;
 
@@ -29,9 +40,9 @@ $(function () {
       <label for="descripcion">Descripción</label>
       <input class="form-control" type="text" id="description" name="description" placeholder="descripcion del curso">
       <label for="fechainicio">Fecha inicio curso</label>
-      <input class="form-control" type="text" name="date_start" placeholder="fecha de inicio" >
+      <input class="form-control" type="date" name="date_start" placeholder="fecha de inicio" >
       <label for="fechafin">Fecha fin curso</label>
-      <input class="form-control" type="text" id="date_end" name="date_end" placeholder="fecha de fin">
+      <input class="form-control" type="date" id="date_end" name="date_end" placeholder="fecha de fin">
       <label for="activo">Activo</label>
       <select class="form-control"  id="active" name="active" required="required">
         <option value="">Elija uno</option>

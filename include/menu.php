@@ -6,6 +6,7 @@
       <li class="nav-item">
         <a class="nav-link" href="gestion.php">Inicio</a>
       </li>
+
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Nuevo
@@ -13,7 +14,9 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="nuevo_curso.php">Curso</a>
           <a class="dropdown-item" href="nuevo_asignatura.php">Asignatura</a>
+          <a class="dropdown-item" href="nuevo_profesor.php">Profesor</a>
       </li>
+
 	  <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Consultar
@@ -23,6 +26,26 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="adios.php">Desconectar</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Eliminar
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="eliminar_curso.php">Curso</a>
+          <a class="dropdown-item" href="eliminar_asignatura.php">Asignatura</a>
+          <a class="dropdown-item" href="eliminar_profesor.php">Profesor</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Modificar
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="modificar_curso.php">Curso</a>
+          <a class="dropdown-item" href="modificar_clase.php">Clase</a>
+          <a class="dropdown-item" href="modificar_profesor.php">Profesor</a>
       </li>
     </ul>
 
