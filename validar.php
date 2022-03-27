@@ -5,7 +5,7 @@ session_start();
 include("include/funciones.php");
 $db = conectarse();
 
-        if (isset($_POST["tipo"]) AND $_POST["tipo"]=="usuario"){$sentencia="SELECT username, pass AS password FROM students WHERE username='".$_POST["login"]."'";}
+        if (isset($_POST["tipo"]) AND $_POST["tipo"]=="usuario"){$sentencia="SELECT username,id, pass AS password FROM students WHERE username='".$_POST["login"]."'";}
         elseif (isset($_POST["tipo"]) AND $_POST["tipo"]=="administrador"){$sentencia="SELECT username, password FROM users_admin WHERE username='".$_POST["login"]."'";}
         else {echo "No se han recibido parámetros correctos para la validación";exit;};
         $result = $db->query($sentencia);
@@ -14,7 +14,7 @@ $db = conectarse();
         {
             if ($row[0]["password"]==$_POST["password"])
                 {
-                    if ($_POST["tipo"]=="usuario"){$_SESSION["usuario"]=$row[0]["username"];$_SESSION["nivel"]=3;$destino="usuario.php";};
+                    if ($_POST["tipo"]=="usuario"){$_SESSION["id"]=$row[0]["id"];$_SESSION["usuario"]=$row[0]["username"];$_SESSION["nivel"]=3;$destino="usuario.php";};
                     if ($_POST["tipo"]=="administrador"){$_SESSION["usuario"]=$row[0]["username"];$_SESSION["nivel"]=9;$destino="gestion.php";};
                 }
             else{echo "Lo sentimos, contraseña incorrecta.";exit;}

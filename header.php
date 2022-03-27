@@ -19,6 +19,7 @@ if (!isset($_SESSION)) session_start();
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css">
+
 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="css/styles.css">
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

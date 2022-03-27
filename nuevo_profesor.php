@@ -11,8 +11,8 @@
     session_start();
   }
     
-  $nombre = $_POST['nombre'] ? $_POST['nombre']: false;
-  $nombre_usuario = $_POST['nombre_usuario'] ? $_POST['nombre_usuario']: false;
+  $nombre = $_POST['name'] ? $_POST['name']: false;
+  $nombre_usuario = $_POST['surname'] ? $_POST['surname']: false;
   $telefono = $_POST['telefono'] ? $_POST['telefono']: false;
   $nif = $_POST['nif'] ? $_POST['nif']: false;
   $email = $_POST['email'] ? $_POST['email']: false;
@@ -55,15 +55,15 @@ exit;
     <form class="form form-control" action="nuevo_profesor.php" method="post">
       <input type="hidden" name="entrando" value="s">
       <label for="nombre">Nombre Profesor</label>
-      <input class="form-control" type="text" id="name" name="nombre" placeholder="nombre del profesor">
+      <input class="form-control" type="text" id="name" name="name" placeholder="nombre del profesor">
       <label for="nombre_usuario">Nombre de usuario</label>
-      <input class="form-control" type="text" id="description" name="nombre_usuario" placeholder="nombre de usuario">
+      <input class="form-control" type="text" id="description" name="surname" placeholder="apellidos">
       <label for="telefono">Telefono de contacto</label>
       <input class="form-control" type="text" name="telefono" placeholder="xxxxxxxxx" >
       <label for="nif">Nif </label>
       <input class="form-control" type="text" id="date_end" name="nif" placeholder="xxxxxxxxx-X">
       <label for="email">Email</label>
-      <input class="form-control" type="email" id="date_end" name="nif" placeholder="email@email.com">
+      <input class="form-control" type="email" id="date_end" name="email" placeholder="email@email.com">
       <input  class="btn btn-primary" type="submit" class="fadeIn fourth" value="Añadir profesor">
     </form>
 </div>

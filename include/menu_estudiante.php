@@ -4,7 +4,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="gestion.php">Calendario</a>
+        <a class="nav-link" href="calendario.php">Calendario</a>
       </li>
       <!--
       <li class="nav-item dropdown">

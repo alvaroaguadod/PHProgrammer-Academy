@@ -3,10 +3,9 @@
  include("include/nivel.php");
  include("include/menu.php");
  include("include/funciones.php");
+ $db = conectarse();
   if (isset($_POST["entrando"]) AND $_POST["entrando"]=="s"){
-   
-    
-    $db = conectarse();
+
 
     
     if(!isset($_SESSION)){
@@ -15,17 +14,17 @@
 
     
 
-    $name = isset($_POST['name']) ? $_POST['name'] : false;
-    $profesor = isset($_POST['surname']) ? $_POST['surname'] : false;
+    $name_class = isset($_POST['name_class']) ? $_POST['name_class'] : false;
+    $idCurso = isset($_POST['id_curso']) ? $_POST['id_curso'] : false;
     $horario_inicio = isset($_POST['time_start']) ? $_POST['time_start'] : false;
     $horario_fin = isset($_POST['time_end']) ? $_POST['time_end'] : false;
     $dia_semana = isset($_POST['day']) ? $_POST['day'] : false;
-    $name_class = isset($_POST['name_class']) ? $_POST['name_class'] : false;
+    $idProfesor = isset($_POST['id_profesor']) ? $_POST['id_profesor'] : false;
     $color = isset($_POST['color']) ? $_POST['color'] : false;
 
 
   
-
+        /*
         $sqlIdProfesor = "SELECT id_teacher FROM teachers WHERE surname= '$profesor' ";
         //obtenemos el valor entero del id profesor con el nombre introducido introducido en formulario
         $select_profesor = mysqli_fetch_assoc(mysqli_query($db, $sqlIdProfesor));
@@ -35,7 +34,7 @@
         $sqlCurso = "SELECT id_course FROM courses WHERE name='$name_class' ";
         $select_curso = mysqli_fetch_assoc(mysqli_query($db, $sqlCurso));
         $idCurso =intval($select_curso['id_course']);
-        
+        */
         $sqlHorario= "SHOW TABLE STATUS LIKE 'schedule'";
         $sql= mysqli_fetch_assoc(mysqli_query($db, $sqlHorario));
         $idHorario = $sql['Auto_increment'];
@@ -60,7 +59,7 @@
     }
 
 
-  echo "Se ha registrado la clase ".$_POST["name"];
+  echo "Se ha registrado la clase ".$_POST["name_class"];
   exit;
 
   };
@@ -77,17 +76,24 @@ $(function () {
     <div class="form-group">
     <form class="form form-control" name="login" action="nueva_clase.php" method="POST">
       <input type="hidden" name="entrando" value="s">
-      
-      <label for="name">Seleccione Curso</label>
-      <input class="form-control" type="text" id="name" name="name" placeholder="nombre del curso">
-      
+      <label for="clase">Indique el curso</label>
+      <select name="id_curso" class="form-control">
+        <option value="">Elija un curso</option>
+      <?php 
 
-      <label for="surname">Indique nombre de usuario del profesor</label>
-      <select class="form-control">
+      $sqlIdCourses = "SELECT * FROM courses";
+      $result = mysqli_query($db, $sqlIdCourses);
+      while($select_courses = mysqli_fetch_assoc($result)){
+          echo "<option value=".$select_courses['id_course'].">".$select_courses['name']."</option>";
+}
+?>  
+</select>
+      <label for="surname">Indique el profesor</label>
+      <select name="id_profesor" class="form-control">
         <option value="">Elija un profesor</option>
 
      <?php 
-         $db = conectarse();
+
          $sqlIdProfesor = "SELECT * FROM teachers";
          $result = mysqli_query($db, $sqlIdProfesor);
          
@@ -104,7 +110,7 @@ $(function () {
       <input class="form-control" type="time" name="time_end" placeholder="horario fin de asignatura" >
       
       <label for="name_class">¿Cual es el nombre del aula?</label>
-      <input class="form-control" type="text" id="name" name="name_class" placeholder="nombre asignatura">
+      <input class="form-control" type="text" id="name" name="name_class" placeholder="nombre aula">
 
       <label for="name_class">¿Que dia?</label>
       <input class="form-control" type="date" id="name" name="day" placeholder="indique dia">

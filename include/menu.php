@@ -15,6 +15,7 @@
           <a class="dropdown-item" href="nuevo_curso.php">Curso</a>
           <a class="dropdown-item" href="nuevo_asignatura.php">Asignatura</a>
           <a class="dropdown-item" href="nuevo_profesor.php">Profesor</a>
+          <a class="dropdown-item" href="nueva_clase.php">Clase</a>
       </li>
 
 	  <li class="nav-item dropdown">
@@ -23,6 +24,9 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="listado.php?tabla=students&tipo=Estudiantes">Listado Estudiantes</a>
+          <a class="dropdown-item" href="listado.php?tabla=courses&tipo=Cursos">Listado Cursos</a>
+          <a class="dropdown-item" href="listado.php?tabla=teachers&tipo=Profesores">Listado Profersores</a>
+          <a class="dropdown-item" href="listado.php?tabla=class&tipo=Clases">Listado Clases</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="adios.php">Desconectar</a>
