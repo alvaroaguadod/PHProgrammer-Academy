@@ -36,7 +36,7 @@ if (!isset($_SESSION)) session_start();
 if (!isset($_SESSION) OR !isset($_SESSION["nivel"])){
 ?>
             <nav class="navegacion">
-                <a href="login_admin.html">Login como administrador</a>
+                <a href="login_admin.html">Administrador</a>
                 <a href="login.html">Login</a>
                 <a href="register.html">Register</a>
             </nav>
