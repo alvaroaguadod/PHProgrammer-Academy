@@ -115,7 +115,7 @@ $(function () {
       <label for="name_class">¿Que dia?</label>
       <input class="form-control" type="date" id="name" name="day" placeholder="indique dia">
       
-      <label for="color">¿Con que color identifica la clase?</label>
+      <label for="color">¿Con que color se identifica la clase?</label>
       <input class="form-control" type="color" id="color" name="color" placeholder="color asignatura">
       <input  class="btn btn-primary" type="submit" class="fadeIn fourth" value="Asociar">
     </form>

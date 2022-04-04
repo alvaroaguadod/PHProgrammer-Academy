@@ -25,7 +25,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="listado.php?tabla=students&tipo=Estudiantes">Listado Estudiantes</a>
           <a class="dropdown-item" href="listado.php?tabla=courses&tipo=Cursos">Listado Cursos</a>
-          <a class="dropdown-item" href="listado.php?tabla=teachers&tipo=Profesores">Listado Profersores</a>
+          <a class="dropdown-item" href="listado.php?tabla=teachers&tipo=Profesores">Listado Profresores</a>
           <a class="dropdown-item" href="listado.php?tabla=class&tipo=Clases">Listado Clases</a>
       </li>
       <li class="nav-item">
