@@ -17,14 +17,16 @@ $db = conectarse();
                     if ($_POST["tipo"]=="usuario"){$_SESSION["id"]=$row[0]["id"];$_SESSION["usuario"]=$row[0]["username"];$_SESSION["nivel"]=3;$destino="usuario.php";};
                     if ($_POST["tipo"]=="administrador"){$_SESSION["usuario"]=$row[0]["username"];$_SESSION["nivel"]=9;$destino="gestion.php";};
                 }
-            else{echo "Lo sentimos, contraseña incorrecta.";exit;}
+            else{
+                include("header.php");
+                echo '<div class="container" style="margin-top:30px"><div class="alert alert-danger">Lo sentimos, contraseña incorrecta.</div><form action="login.html"><input  class="btn btn-primary" type="submit"  value="Pulse aqui para acceder"></form>';
+                exit;}
         } 
         
         else {
             include("header.php");
-            echo '<div class="container" style="margin-top:30px">Usuario no localizado. Puede darse de alta como usuario en   <form action="login.html">
-            <input  class="btn btn-primary" type="submit"  value="Pulse aqui para acceder">
-            </form></div>';exit;
+            echo '<div class="container" style="margin-top:30px"><div class="alert alert-danger">Usuario no localizado. Puede darse de alta como usuario en</div>   <form action="login.html"><input  class="btn btn-primary" type="submit"  value="Pulse aqui para acceder"></form></div>';
+            exit;
         }
         
 

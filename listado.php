@@ -34,6 +34,8 @@ $valores["teachers"]=array("id_teacher","name","surname","telephone","nif","emai
                     
                 }
                 ?>
+                <th>Editar</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -48,11 +50,13 @@ while ($row = $result->fetch_assoc()) {
                 <?php
                 $contador=0;
                 foreach ($valores[$_GET["tabla"]] as $valor) {
-                    if ($contador==0){echo"<td><a href='ficha.php?tabla=".$_GET["tabla"]."&id=".$row[$valor]."'>".$row[$valor]."</a></td>";}
+                    if ($contador==0){$identificador=$row[$valor];$campo=$valores[$_GET["tabla"]][0]; echo"<td><a href='ficha.php?tabla=".$_GET["tabla"]."&id=".$row[$valor]."'>".$row[$valor]."</a></td>";}
                     else {echo"<td>".$row[$valor]."</td>";};
                     $contador++;
                 }
-                ?>            
+                ?>  
+ <td><a href="modificar.php?tabla=<?php echo $_GET["tabla"];?>&registro=<?php echo $identificador;?>&campo=<?php echo $campo;?>"><i class="fas fa-edit" style="font-size:24px"></i></a></td>          
+<td><a href="borrar.php?tabla=<?php echo $_GET["tabla"];?>&registro=<?php echo $identificador;?>&campo=<?php echo $campo;?>"><i class="fas fa-trash" style="font-size:24px"></i></a></td>
 </tr>
 
 <?php    
