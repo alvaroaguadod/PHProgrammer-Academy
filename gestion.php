@@ -4,8 +4,17 @@ include("include/nivel.php");
 include("include/menu.php");
 ?>
 <div class="container" style="margin-top:30px">
-<h1>Página de gestión</h1>
-<p>Esta es la página de gestión. En esta página se puede mostrar la información para el gestor de la aplicación</p>
+<h5 text-align: center>Hola, <?php echo $_SESSION["usuario"]; ?>.</h5>
+
+<h2>Administra la información<br> 
+    que necesites fácilmente. </h2>
+    
+<p>Desde el Panel Administración podrás crear, consultar, eliminar y modificar la información del ente que necesites. 
+<p>En la pestaña de Nuevo podrás crear un curso, una asignatura, una clase o introducir un nuevo profesor. Así como, configurar el día y hora de las clases, el color con el que se muestra en el horario, junto con el profesor que la imparte y el curso al que pertenece.
+<p>En la pestaña de Consultar podrás revisar cuatro listados diferentes. El Listado de Estudiantes, el de Cursos, el de Profesores y el de Clases.
+<p>En la pestaña de Eliminar podrás borrar el curso, la asignatura o el profesor que ya no se realize o que ya no esté en nuestro equipo. 
+<p>En la pestaña de Modificar podrás corregir la información de Curso, Clase o Profesor que indiques. 
+
 </div>
 <?php
 include("footer.php");

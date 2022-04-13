@@ -69,7 +69,7 @@ exit;
       <input type="hidden" name="entrando" value="s">
       
       <label for="name">Introduzca el nombre del curso</label>      
-      <input class="form-control" type="text" id="name" name="name" placeholder="nombre del curso">
+      <input class="form-control" type="text" id="name" name="name" placeholder="nombre del curso" required>
 
       <label for="campo">¿Que datos quiere modificar?</label>
         <select name="campo">
@@ -81,7 +81,7 @@ exit;
         </select><br/>
 
       <label for="dato">Introduzca los nuevos datos</label>
-      <input class="form-control" type="text" name="dato" placeholder="nuevos datos" >
+      <input class="form-control" type="text" name="dato" placeholder="nuevos datos" required>
       
       <input  class="btn btn-primary" type="submit" class="fadeIn fourth" value="Modificar datos">
     </form>

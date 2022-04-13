@@ -10,6 +10,7 @@ include_once 'header.php';
         </div>
         <br>
         <img src="images/academy.png" class="academy" alt="Academy">
+        <br>
         <h2> Triunfa como <span class="tp-highred"> programador </span> con nuestra formación online.</h2>
         <h2>Regístrate y accede a tu área de usuario</h2>
         <br>

@@ -25,13 +25,10 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="listado.php?tabla=students&tipo=Estudiantes">Listado Estudiantes</a>
           <a class="dropdown-item" href="listado.php?tabla=courses&tipo=Cursos">Listado Cursos</a>
-          <a class="dropdown-item" href="listado.php?tabla=teachers&tipo=Profesores">Listado Profresores</a>
+          <a class="dropdown-item" href="listado.php?tabla=teachers&tipo=Profesores">Listado Profesores</a>
           <a class="dropdown-item" href="listado.php?tabla=class&tipo=Clases">Listado Clases</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="adios.php">Desconectar</a>
-      </li>
-
+ 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Eliminar
@@ -50,6 +47,10 @@
           <a class="dropdown-item" href="modificar_curso.php">Curso</a>
           <a class="dropdown-item" href="modificar_clase.php">Clase</a>
           <a class="dropdown-item" href="modificar_profesor.php">Profesor</a>
+      </li>
+ 
+      <li class="nav-item">
+        <a class="nav-link" href="adios.php">Desconectar</a>
       </li>
     </ul>
 

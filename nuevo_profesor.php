@@ -53,17 +53,17 @@ exit;
 <h2>Formulario de alta de profesores</h2>
     <div class=form-group>
     <form class="form form-control" action="nuevo_profesor.php" method="post">
-      <input type="hidden" name="entrando" value="s">
+      <input type="hidden" name="entrando" value="s" required>
       <label for="nombre">Nombre Profesor</label>
-      <input class="form-control" type="text" id="name" name="name" placeholder="nombre del profesor">
+      <input class="form-control" type="text" id="name" name="name" placeholder="nombre del profesor" required>
       <label for="nombre_usuario">Nombre de usuario</label>
-      <input class="form-control" type="text" id="description" name="surname" placeholder="apellidos">
+      <input class="form-control" type="text" id="description" name="surname" placeholder="nombre de usuario" required>
       <label for="telefono">Telefono de contacto</label>
-      <input class="form-control" type="text" name="telefono" placeholder="xxxxxxxxx" >
+      <input class="form-control" type="text" name="telefono" placeholder="xxxxxxxxx" required>
       <label for="nif">Nif </label>
-      <input class="form-control" type="text" id="date_end" name="nif" placeholder="xxxxxxxxx-X">
+      <input class="form-control" type="text" id="date_end" name="nif" placeholder="xxxxxxxxx-X" required>
       <label for="email">Email</label>
-      <input class="form-control" type="email" id="date_end" name="email" placeholder="email@email.com">
+      <input class="form-control" type="email" id="date_end" name="email" placeholder="email@email.com" required>
       <input  class="btn btn-primary" type="submit" class="fadeIn fourth" value="Añadir profesor">
     </form>
 </div>

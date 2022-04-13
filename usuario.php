@@ -6,9 +6,15 @@ include("include/menu_estudiante.php");
 include("include/funciones.php");
 ?>
 <div class="container" style="margin-top:30px">
-<h1>Página de estudiante</h1>
+<h5 text-align: center>Hola, <?php echo $_SESSION["usuario"];?>.</h5>
 
-<p>Esta es la página de estudiante. En esta página se puede mostrar la información para el estudiante de la aplicación</p>
+<h2>Configura tu perfil<br> 
+    como lo desees. </h2>
+    <br>
+    <p>Aquí podrás hacer modificación del nombre de usuario, correo electrónico y contraseña.
+
+
+</div>
 
 <?php
 $db=conectarse();

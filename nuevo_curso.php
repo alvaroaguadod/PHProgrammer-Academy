@@ -16,11 +16,15 @@
   $sentencia = "INSERT INTO courses (name, description, date_start, date_end, active) VALUES ('".$_POST["name"]."', '".$_POST["description"]."', '".$_POST["date_start"]."', '".$_POST["date_end"]."', '$active') ";
   
   //echo $sentencia;
-  $result = $db->query($sentencia);
-  var_dump($result);
-  echo "Se ha registrado el curso ".$_POST["name"];
-  exit;
-
+    $result = $db->query($sentencia);
+  if($result){
+    echo "Se ha registrado el curso ".$_POST["name"];
+  }
+  else {
+    echo "Ha ocurrido un error.";
+  }
+  //var_dump($result);
+ 
   };
   ?>
 <script>
@@ -31,18 +35,18 @@ $(function () {
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container" style="margin-top:30px">
-<h2>Formulario de alta de curso</h2>
+<h2>Formulario de alta de un curso</h2>
     <div class=form-group>
     <form class="form form-control" name="login" action="nuevo_curso.php" method="post">
-      <input type="hidden" name="entrando" value="s">
+      <input type="hidden" name="entrando" value="s" required>
       <label for="nombrecurso">Nombre del curso</label>
-      <input class="form-control" type="text" id="name" name="name" placeholder="nombre del curso">
+      <input class="form-control" type="text" id="name" name="name" placeholder="nombre del curso" required>
       <label for="descripcion">Descripción</label>
-      <input class="form-control" type="text" id="description" name="description" placeholder="descripcion del curso">
+      <input class="form-control" type="text" id="description" name="description" placeholder="descripcion del curso" required>
       <label for="fechainicio">Fecha inicio curso</label>
-      <input class="form-control" type="date" name="date_start" placeholder="fecha de inicio" >
+      <input class="form-control" type="date" name="date_start" placeholder="fecha de inicio" required>
       <label for="fechafin">Fecha fin curso</label>
-      <input class="form-control" type="date" id="date_end" name="date_end" placeholder="fecha de fin">
+      <input class="form-control" type="date" id="date_end" name="date_end" placeholder="fecha de fin" required>
       <label for="activo">Activo</label>
       <select class="form-control"  id="active" name="active" required="required">
         <option value="">Elija uno</option>

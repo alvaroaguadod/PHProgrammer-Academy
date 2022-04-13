@@ -41,7 +41,7 @@
 
         $sqlClase = "INSERT INTO class (id_teacher, id_course, id_schedule, name, color) VALUES ($idProfesor, $idCurso , $idHorario,'$name_class', '$color')";
         $asociarClase = mysqli_query($db, $sqlClase);
-        echo $sqlClase;
+        //echo $sqlClase;
 
         if($asociarClase){
              //obtenemos el id de clase creada
@@ -52,8 +52,8 @@
             //Insertamos en el horario con el idClase
             $sqlHorario = "INSERT INTO schedule (id_schedule, id_class, time_start, time_end, day) VALUES ($idHorario , $idClase, '$horario_inicio', '$horario_fin', '$dia_semana' )";
             $sqlHorario_insert = mysqli_query($db, $sqlHorario);
-            echo $sqlHorario;
-
+            //echo $sqlHorario;
+        
             
     
     }
@@ -72,12 +72,12 @@ $(function () {
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container" style="margin-top:30px">
-<h2>Formulario asociar curso </h2>
+<h2>Formulario de alta de una clase</h2>
     <div class="form-group">
     <form class="form form-control" name="login" action="nueva_clase.php" method="POST">
       <input type="hidden" name="entrando" value="s">
-      <label for="clase">Indique el curso</label>
-      <select name="id_curso" class="form-control">
+      <label for="clase">Indique a que curso está asociada la clase</label>
+      <select name="id_curso" class="form-control" required>
         <option value="">Elija un curso</option>
       <?php 
 
@@ -89,7 +89,7 @@ $(function () {
 ?>  
 </select>
       <label for="surname">Indique el profesor</label>
-      <select name="id_profesor" class="form-control">
+      <select name="id_profesor" class="form-control" required>
         <option value="">Elija un profesor</option>
 
      <?php 
@@ -104,20 +104,20 @@ $(function () {
       </select>
 
       <label for="idschedule">Seleccione hora de inicio</label>
-      <input class="form-control" type="time" name="time_start" placeholder="horario inicio asignatura" >
+      <input class="form-control" type="time" name="time_start" placeholder="horario inicio asignatura" required>
 
       <label for="idschedule">Seleccione hora de fin</label>
-      <input class="form-control" type="time" name="time_end" placeholder="horario fin de asignatura" >
+      <input class="form-control" type="time" name="time_end" placeholder="horario fin de asignatura" required>
       
-      <label for="name_class">¿Cual es el nombre del aula?</label>
-      <input class="form-control" type="text" id="name" name="name_class" placeholder="nombre aula">
+      <label for="name_class">¿Cuál es el nombre del aula?</label>
+      <input class="form-control" type="text" id="name" name="name_class" placeholder="nombre aula" required>
 
-      <label for="name_class">¿Que dia?</label>
-      <input class="form-control" type="date" id="name" name="day" placeholder="indique dia">
+      <label for="name_class">¿Qué día se realizará?</label>
+      <input class="form-control" type="date" id="name" name="day" placeholder="indique dia" required>
       
       <label for="color">¿Con que color se identifica la clase?</label>
-      <input class="form-control" type="color" id="color" name="color" placeholder="color asignatura">
-      <input  class="btn btn-primary" type="submit" class="fadeIn fourth" value="Asociar">
+      <input class="form-control" type="color" id="color" name="color" placeholder="color asignatura" required>
+      <input  class="btn btn-primary" type="submit" class="fadeIn fourth" value="Añadir Clase">
     </form>
 </div>
 </div>
