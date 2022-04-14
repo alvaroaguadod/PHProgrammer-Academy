@@ -3,6 +3,9 @@ include("header.php");
 include("include/nivel.php");
 include("include/menu.php");
 include("include/funciones.php");
+?>
+<div class="container" style="margin-top:30px">
+<?php
 $campos=array();
 $campos["students"]=array("identificador","usuario","Correo electrónico","Nombre","Apellido","Teléfomo","Nif","Fecha de registro");
 $campos["courses"]=array("id_course","name","description","date_start","date_end","active");
@@ -15,6 +18,7 @@ $valores["class"]=array("id_class","id_teacher", "id_course","id_schedule","name
 $valores["teachers"]=array("id_teacher","name","surname","telephone","nif","email");
 $relacionadas=array();
 $relacionadas["courses"]=array("students","enrollment","id","id_student","id_course","id_course",array("id_student","id_course"));
+$relacionadas["students"]=array("courses","enrollment","id_course","id_student","id_course","id_course");
 //if(!isset($_GET["tabla"]) OR !isset($_GET["relacionada"])){echo "No se han recibido los parámetros correctos";exit;}
 $db = conectarse();
 if (isset($_POST["entrando"]) AND $_POST["entrando"]=="s"){
@@ -26,14 +30,14 @@ if (isset($_POST["entrando"]) AND $_POST["entrando"]=="s"){
   $idEstudiante = isset($_POST['id_estudiante']) ? $_POST['id_estudiante'] : false;
       $sqlClase = "INSERT INTO enrollment (id_student, id_course) VALUES ($idEstudiante, $idCurso)";
       $asociarClase = mysqli_query($db, $sqlClase);
-      echo $sqlClase;
+      //echo $sqlClase;
 
           
   
 
 
 
-echo "Se ha registrado la clase";
+echo "<div class=\"alert alert-success\">Se ha registrado la clase</div>";
 exit;
 
 };
@@ -45,7 +49,7 @@ $('#datepicker').datepicker();
 </script>
 <!------ Include the above in your HEAD tag ---------->
 
-<div class="container" style="margin-top:30px">
+
 <h2>Formulario asociar curso - estudiante </h2>
   <div class="form-group">
   <form class="form form-control" name="login" action="nueva_relacion.php" method="POST">
@@ -58,7 +62,9 @@ $('#datepicker').datepicker();
     $sqlIdCourses = "SELECT * FROM courses";
     $result = mysqli_query($db, $sqlIdCourses);
     while($select_courses = mysqli_fetch_assoc($result)){
-        echo "<option value=".$select_courses['id_course'].">".$select_courses['name']."</option>";
+        echo "<option";
+        if (isset($_GET["id_course"]) AND $_GET["id_course"]==$select_courses['id_course']){echo " selected=selected";};
+        echo " value=".$select_courses['id_course'].">".$select_courses['name']."</option>";
 }
 ?>  
 </select>
@@ -72,7 +78,9 @@ $('#datepicker').datepicker();
        $result = mysqli_query($db, $sqlIdProfesor);
        
       while($select_profesor = mysqli_fetch_assoc($result)){
-          echo "<option value=".$select_profesor['id'].">".$select_profesor['surname'].",".$select_profesor['name']."</option>";
+          echo "<option";
+          if (isset($_GET["id_student"]) AND $_GET["id_student"]==$select_profesor['id']){echo " selected=selected";};
+          echo " value=".$select_profesor['id'].">".$select_profesor['surname'].",".$select_profesor['name']."</option>";
       }
     ?>
     </select>

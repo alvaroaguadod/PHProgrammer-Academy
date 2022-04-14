@@ -1,15 +1,11 @@
 <?php
 include("cabecera.php");
 include("menu.php");
-$validado=false;
-$db = new mysqli('localhost', 'horarios_escolares', 'horarios_escolares', 'horarios_escolares');
-if ($db->connect_error) {
-        die('Connect Error (' . $db->connect_errno . ') '
-            . $mysqli->connect_error);};
+include("include/funciones.php")
+$db = conectarse();
 if (isset($_GET["accion"]) AND $_GET["accion"]=="entrando"){
 echo "Insertando registro";
-$campos=array();
-$valores=array();
+
 foreach ($_GET as $key => $value){
 
     if ($key!="tabla" AND $key!="accion"){

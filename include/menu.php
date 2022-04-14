@@ -13,7 +13,6 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="nuevo_curso.php">Curso</a>
-          <a class="dropdown-item" href="nuevo_asignatura.php">Asignatura</a>
           <a class="dropdown-item" href="nuevo_profesor.php">Profesor</a>
           <a class="dropdown-item" href="nueva_clase.php">Clase</a>
       </li>
@@ -35,7 +34,6 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="eliminar_curso.php">Curso</a>
-          <a class="dropdown-item" href="eliminar_asignatura.php">Asignatura</a>
           <a class="dropdown-item" href="eliminar_profesor.php">Profesor</a>
       </li>
 

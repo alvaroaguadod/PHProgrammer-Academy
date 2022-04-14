@@ -15,6 +15,8 @@ $valores["class"]=array("id_class","id_teacher", "id_course","id_schedule","name
 $valores["teachers"]=array("id_teacher","name","surname","telephone","nif","email");
 $relacionadas=array();
 $relacionadas["courses"]=array("students","enrollment","id","id_student","id_course","id_course");
+$relacionadas["students"]=array("courses","enrollment","id_course","id_course","id_student","id_course");
+
 if ( !isset($_GET) AND !isset($_GET["tabla"]) ){echo "No se han recibido los parámetros necesarios";exit;};
 $db=conectarse();
 if (isset($valores[$_GET["tabla"]])){$campo_busqueda=$valores[$_GET["tabla"]][0];} else{$campo_busqueda="id";};
@@ -42,18 +44,40 @@ $row = $result->fetch_assoc();
         
     }
       ?></div>
+    <?php 
+    if (isset($relacionadas[$_GET["tabla"]])){?>
   <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <a href="nueva_relacion.php?tabla=<?php echo $_GET["tabla"];?>&relacionada=<?php echo $relacionadas[$_GET["tabla"]][0];?>&intermedia=<?php echo $relacionadas[$_GET["tabla"]][0];?>">Añadir <?php echo $relacionadas[$_GET["tabla"]][0];?> </a>
     <?php
-          $sqlIdRelacionados = "SELECT * FROM ".$relacionadas[$_GET["tabla"]][0]." INNER JOIN ".$relacionadas[$_GET["tabla"]][1]." ON ".$relacionadas[$_GET["tabla"]][0].".".$relacionadas[$_GET["tabla"]][2]." = ".$relacionadas[$_GET["tabla"]][1].".".$relacionadas[$_GET["tabla"]][3]." WHERE ".$relacionadas[$_GET["tabla"]][1].".".$relacionadas[$_GET["tabla"]][5]."= ".$row[$valores[$_GET["tabla"]][0]]."";
+          if ($_GET["tabla"]=="students") {
+            echo "<h4>Cursos matrículados</h4>";
+          $sqlIdRelacionados = "SELECT courses.name AS nombre_curso, courses.id_course AS id_curso FROM courses INNER JOIN enrollment ON courses.id_course = enrollment.id_course INNER JOIN students ON students.id=enrollment.id_student WHERE enrollment.id_student= ".$row[$valores[$_GET["tabla"]][0]]."";
           //echo $sqlIdRelacionados;
           $result = mysqli_query($db, $sqlIdRelacionados);
           while($select_courses = mysqli_fetch_assoc($result)){
-              echo $select_courses[$relacionadas[$_GET["tabla"]][2]];
+              echo "<a class=\"btn btn-default\" href=\"ficha.php?tabla=courses&id=".$select_courses["id_curso"]."\">".$select_courses["nombre_curso"]."</a><br />";
     }
+    ?>
+    <p><a class="btn btn-default" href="nueva_relacion.php?tabla=<?php echo $_GET["tabla"];?>&relacionada=<?php echo $relacionadas[$_GET["tabla"]][0];?>&intermedia=<?php echo $relacionadas[$_GET["tabla"]][0];?>&id_student=<?php echo $row[$valores[$_GET["tabla"]][0]];?>">Matricular en curso </a></p>
+ <?php
+  }
+  if ($_GET["tabla"]=="courses") {
+    echo "<h4>Cursos matrículados</h4>";
+  $sqlIdRelacionados = "SELECT CONCAT(students.surname,', ',students.name) AS nombre_estudiante, students.id AS id_estudiante FROM courses INNER JOIN enrollment ON courses.id_course = enrollment.id_course INNER JOIN students ON students.id=enrollment.id_student WHERE enrollment.id_course= ".$row[$valores[$_GET["tabla"]][0]]."";
+  //echo $sqlIdRelacionados;
+  $result = mysqli_query($db, $sqlIdRelacionados);
+  while($select_courses = mysqli_fetch_assoc($result)){
+      echo "<a class=\"btn btn-default\" href=\"ficha.php?tabla=students&id=".$select_courses["id_estudiante"]."\">".$select_courses["nombre_estudiante"]."</a><br />";
+}
+?>
+<p><a class="btn btn-default" href="nueva_relacion.php?tabla=<?php echo $_GET["tabla"];?>&relacionada=<?php echo $relacionadas[$_GET["tabla"]][0];?>&intermedia=<?php echo $relacionadas[$_GET["tabla"]][0];?>&id_course=<?php echo $row[$valores[$_GET["tabla"]][0]];?>">Matricular a alumno </a></p>
+<?php
+}
     //echo $relacionadas[$_GET["tabla"]][0];
     ?>
   </div>
+  <?php
+}
+?>
 </div>
 <?php
 include("footer.php");

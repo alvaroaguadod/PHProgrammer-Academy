@@ -3,6 +3,9 @@
  include("include/nivel.php");
  include("include/menu.php");
  include("include/funciones.php");
+ ?>
+ <div class="container" style="margin-top:30px">
+ <?php
  $db = conectarse();
   if (isset($_POST["entrando"]) AND $_POST["entrando"]=="s"){
 
@@ -59,7 +62,7 @@
     }
 
 
-  echo "Se ha registrado la clase ".$_POST["name_class"];
+  echo "<div class=\"alert alert-success\">Se ha registrado la clase ".$_POST["name_class"]."</div>";
   exit;
 
   };

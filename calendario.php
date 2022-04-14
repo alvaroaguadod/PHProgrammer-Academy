@@ -245,6 +245,7 @@ include("include/funciones.php");
 
 
 <script>
+
     var $currentPopover = null;
   $(document).on('shown.bs.popover', function (ev) {
     var $target = $(ev.target);
@@ -349,7 +350,7 @@ $.extend(Date.prototype, {
         monthAddEvent(index, event);
         return;
       }
-      var $event = $('<div/>', {'class': 'event', text: event.title, title: event.title, 'data-index': index,'style':estilo}),
+      var $event = $('<div/>', {'class': 'event', text: event.title, title: event.title, 'data-index': index,'style':event.estilo}),
           start = event.start,
           end = event.end || start,
           time = event.start.toTimeString(),
