@@ -511,7 +511,7 @@ var data = [],
  <?php
 
   $db=conectarse();
-  $sqlClases = "SELECT schedule.time_start, schedule.time_end, schedule.day, courses.name AS CURSO, class.color AS COLOR FROM students INNER JOIN enrollment ON enrollment.id_student=students.id INNER JOIN courses ON courses.id_course=enrollment.id_course INNER JOIN class ON class.id_course=courses.id_course INNER JOIN schedule ON schedule.id_class=class.id_class WHERE students.id=".$_SESSION["id"];
+  $sqlClases = "SELECT schedule.time_start, schedule.time_end, schedule.day, courses.name AS CURSO, class.name AS CLASE, class.color AS COLOR FROM students INNER JOIN enrollment ON enrollment.id_student=students.id INNER JOIN courses ON courses.id_course=enrollment.id_course INNER JOIN class ON class.id_course=courses.id_course INNER JOIN schedule ON schedule.id_class=class.id_class WHERE students.id=".$_SESSION["id"];
   $result = mysqli_query($db, $sqlClases);
   //echo $sqlClases;
  while($row = mysqli_fetch_assoc($result)){
@@ -522,7 +522,7 @@ var data = [],
   $hora_fin=date('H', strtotime($row["time_end"]));
   $minutos_ini=date('i', strtotime($row["time_start"]));
   $minutos_fin=date('i', strtotime($row["time_end"]));
-  echo "data.push({title: '". $row["CURSO"]."', start: new Date(".$year.",".$month.",".$day.",".$hora_ini.",".$minutos_ini."), end: new Date(".$year.",".$month.",".$day.",".$hora_fin.",".$minutos_fin."), allDay: false,text: 'clase',estilo: 'background-color:". $row["COLOR"].";background-image:none' });";   
+  echo "data.push({title: '". $row["CURSO"]." - ". $row["CLASE"]."', start: new Date(".$year.",".$month.",".$day.",".$hora_ini.",".$minutos_ini."), end: new Date(".$year.",".$month.",".$day.",".$hora_fin.",".$minutos_fin."), allDay: false,text: 'clase',estilo: 'background-color:". $row["COLOR"].";background-image:none' });";   
  }
  ?>
   

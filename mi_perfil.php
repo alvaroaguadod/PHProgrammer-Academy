@@ -31,19 +31,19 @@ $row = $result->fetch_assoc();
 
 <?php
                 echo "<laber for='username'>Usuario de acceso</label>";
-                echo "<input class='form-control' name='username' value='".$row["username"]."' />";
+                echo "<input class='form-control' type='text' name='username' value='".$row["username"]."' required />";
                 echo "<laber for='nombre'>Nombre</label>";
-                echo "<input class='form-control' name='name' value='".$row["name"]."' />";
+                echo "<input class='form-control' type='text' name='name' value='".$row["name"]."' required />";
                 echo "<laber for='surname'>Apellidos</label>";
-                echo "<input class='form-control' name='surname' value='".$row["surname"]."' />";
+                echo "<input class='form-control' type='text' name='surname' value='".$row["surname"]."' required />";
                 echo "<laber for='telephone'>Teléfono</label>";
-                echo "<input class='form-control' name='telephone' value='".$row["telephone"]."' />";
+                echo "<input class='form-control' type='text' name='telephone' value='".$row["telephone"]."' required />";
                 echo "<laber for='nif'>NIF</label>";
-                echo "<input class='form-control' name='nif' value='".$row["nif"]."' />";
+                echo "<input class='form-control' type='text' name='nif' value='".$row["nif"]."' required />";
                 echo "<laber for='email'>Correo electrónico</label>";
-                echo "<input class='form-control' name='email' value='".$row["email"]."' />";
+                echo "<input class='form-control' type='email' name='email' value='".$row["email"]."' required />";
                 echo "<laber for='pass'>Contraseña</label>";
-                echo "<input class='form-control' name='pass' value='".$row["pass"]."' />";
+                echo "<input class='form-control' type='password' name='pass' value='".$row["pass"]."' required />";
                 echo "<input type='submit' class='btn btn-primary' />"
 ?>            
 </tr>

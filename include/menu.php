@@ -14,6 +14,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="nuevo_curso.php">Curso</a>
           <a class="dropdown-item" href="nuevo_profesor.php">Profesor</a>
+          <a class="dropdown-item" href="nuevo_estudiante.php">Estudiante</a>
           <a class="dropdown-item" href="nueva_clase.php">Clase</a>
       </li>
 

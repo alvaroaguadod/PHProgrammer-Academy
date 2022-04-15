@@ -20,15 +20,17 @@ elseif (isset($_POST) AND isset($_POST["tabla"]) ){
 
 if ( !isset($tabla)) {echo "No se han recibido los parámetros necesarios";exit;};
 $campos=array();
-$campos["students"]=array("identificador","usuario","Correo electrónico","Nombre","Apellido","Teléfomo","Nif","Fecha de registro");
-$campos["courses"]=array("id_course","name","description","date_start","date_end","active");
-$campos["class"]=array("id_class","id_teacher", "id_course","id_schedule","name","color");
-$campos["teachers"]=array("id_teacher","name","surname","telephone","nif","email");
+$campos["students"]=array("Identificador","Usuario","Correo electrónico","Nombre","Apellido","Teléfomo","Nif","Fecha de registro");
+$campos["courses"]=array("Identificador","Nombre del curso","Descripción","Fecha de inicio","Fecha fin","Activo");
+$campos["class"]=array("Identificador","Profesor", "Curso","Identificador Horario","Nombre","Color");
+$campos["teachers"]=array("Identificador","Nombre","Apellido","Teléfono","Nif","Correo electrónico");
+$campos["schedule"]=array("Identificador","Clase","Hora inicio","Hora fin","Día");
 $valores=array();
 $valores["students"]=array("id","username","email","name","surname","telephone","nif","date_registered");
 $valores["courses"]=array("id_course","name","description","date_start","date_end","active");
 $valores["class"]=array("id_class","id_teacher", "id_course","id_schedule","name","color");
 $valores["teachers"]=array("id_teacher","name","surname","telephone","nif","email");
+$valores["schedule"]=array("id_schedule","id_class","time_start","time_end","day");
 
 if (isset($_POST["entrando"]) AND $_POST["entrando"]=="S" ){
 
