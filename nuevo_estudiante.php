@@ -14,7 +14,7 @@
   //echo $sentencia;
     $result = $db->query($sentencia);
   if($result){
-    echo "<div class=\"alert alert-success\">Se ha registrado el curso ".$_POST["name"]."</div>";
+    echo "<div class=\"alert alert-success\">Se ha registrado el estudiante ".$_POST["name"]."</div>";
   }
   else {
     echo "<div class=\"alert alert-error\">Ha ocurrido un error.</div>";

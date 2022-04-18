@@ -47,7 +47,20 @@
           <a class="dropdown-item" href="modificar_clase.php">Clase</a>
           <a class="dropdown-item" href="modificar_profesor.php">Profesor</a>
       </li>
- 
+      <li class="nav-item">
+      <a class="nav-link"
+        <?php
+        $dbmenu = new mysqli('localhost', 'horarios_escolares', 'horarios_escolares', 'horarios_escolares');
+        if ($dbmenu->connect_error) {
+          die('Connect Error (' . $dbmenu->connect_errno . ') '
+            . $mysqli->connect_error);
+        } 
+        $sentencia="SELECT * FROM incidences WHERE incidence_read_at IS NULL";
+        $result = $dbmenu->query($sentencia);
+        if (mysqli_num_rows($result)>0){ echo " style=\"color:red;font-weight:bolder\" "; };
+        ?>
+         href="incidencias.php">Incidencias</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="adios.php">Desconectar</a>
       </li>
