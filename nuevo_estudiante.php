@@ -21,7 +21,6 @@
      
       exit;
     };
-   
     ?>
    <script>
      $(function() {
