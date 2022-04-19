@@ -20,7 +20,7 @@
     echo "<div class=\"alert alert-error\">Ha ocurrido un error.</div>";
   }
   //var_dump($result);
- 
+  
   };
   ?>
 <script>
@@ -32,7 +32,7 @@ $(function () {
 
 <h2>Formulario de alta de estudiante</h2>
     <div class=form-group>
-    <form class="form form-control" name="login" action="nuevo_curso.php" method="post">
+    <form class="form form-control" name="login" action="nuevo_estudiante.php" method="post">
       <input type="hidden" name="entrando" value="s" required>
       <label for="username">Nombre de usuario</label>
       <input class="form-control" type="text" id="username" name="username" placeholder="nombre de usuario" required>

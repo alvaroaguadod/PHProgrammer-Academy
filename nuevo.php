@@ -1,7 +1,7 @@
 <?php
 include("cabecera.php");
 include("menu.php");
-include("include/funciones.php")
+include("include/funciones.php");
 $db = conectarse();
 if (isset($_GET["accion"]) AND $_GET["accion"]=="entrando"){
 echo "Insertando registro";

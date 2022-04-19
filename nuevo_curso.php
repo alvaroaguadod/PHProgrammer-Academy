@@ -18,13 +18,12 @@
   //echo $sentencia;
     $result = $db->query($sentencia);
   if($result){
-    echo "Se ha registrado el curso ".$_POST["name"];
+    echo "<div class=\"alert alert-success\">Se ha registrado el curso ".$_POST["name"]."</div>";
   }
   else {
-    echo "Ha ocurrido un error.";
+    echo "<div class=\"alert alert-error\">Ha ocurrido un error.</div>";
   }
-  //var_dump($result);
- 
+
   };
   ?>
 <script>

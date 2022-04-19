@@ -4,6 +4,7 @@ include("include/nivel.php");
 include("include/menu.php");
 ?>
 <div class="container" style="margin-top:30px">
+
 <h5 text-align: center>Hola, <?php echo $_SESSION["usuario"]; ?>.</h5>
 
 <h2>Administra la información<br> 

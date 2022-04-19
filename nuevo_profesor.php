@@ -40,8 +40,11 @@
 $sql = "INSERT INTO teachers (name, surname, telephone, nif, email) VALUES('$nombre', '$nombre_usuario', '$telefono', '$nif', '$email')";
 $insert = mysqli_query($db, $sql);
   if($insert){
-    echo "Se ha registrado el profesor ".$_POST["name"];
+    echo "<div class=\"alert alert-success\">Se ha registrado el profesor ".$_POST["name"]."</div>";
+  }else{
+    echo "<div class=\"alert alert-error\">Ha ocurrido un error.</div>";
   }
+  
 exit;
 };
   
