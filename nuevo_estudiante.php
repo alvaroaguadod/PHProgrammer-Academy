@@ -18,9 +18,10 @@
       } else {
         echo "<div class=\"alert alert-error\">Ha ocurrido un error.</div>";
       }
-      //var_dump($result);
-
+     
+      exit;
     };
+   
     ?>
    <script>
      $(function() {

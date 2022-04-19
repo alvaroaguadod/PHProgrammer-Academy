@@ -3,6 +3,9 @@ include("header.php");
 include("include/nivel.php");
 include("include/menu.php");
 include("include/funciones.php");
+?>
+<div class="container" style="margin-top:30px">
+<?php
 if (isset($_POST["entrando"]) and $_POST["entrando"] == "s") {
 
   $db = conectarse();
@@ -52,7 +55,7 @@ if (isset($_POST["entrando"]) and $_POST["entrando"] == "s") {
 <!------ Include the above in your HEAD tag ---------->
 
 
-<div class="container" style="margin-top:30px">
+
   <h2>Formulario de alta de profesores</h2>
   <div class=form-group>
     <form class="form form-control" action="nuevo_profesor.php" method="post">

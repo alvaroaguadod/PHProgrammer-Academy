@@ -22,7 +22,9 @@
     } else {
       echo "<div class=\"alert alert-error\">Ha ocurrido un error.</div>";
     }
+    exit;
   };
+  
   ?>
  <script>
    $(function() {

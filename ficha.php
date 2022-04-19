@@ -31,7 +31,7 @@ if (isset($valores[$_GET["tabla"]])){$campo_busqueda=$valores[$_GET["tabla"]][0]
 $sentencia="SELECT * FROM ".$_GET["tabla"]." WHERE ".$campo_busqueda."=".$_GET["id"]." LIMIT 1";
 $result = $db->query($sentencia);
 $row = $result->fetch_assoc();
-$identificador=$valores[$_GET["tabla"]][0];
+$identificador=$row[$valores[$_GET["tabla"]][0]];
 $campo=$valores[$_GET["tabla"]][0];
  ?>
 

@@ -19,13 +19,25 @@ $db = conectarse();
                 }
             else{
                 include("header.php");
-                echo '<div class="container" style="margin-top:30px"><div class="alert alert-danger">Lo sentimos, contraseña incorrecta.</div><form action="login.html"><input  class="btn btn-primary" type="submit"  value="Pulse aqui para acceder"></form>';
+                echo '<div class="container" style="margin-top:30px"><div class="alert alert-danger">Lo sentimos, contraseña incorrecta.</div>';
+                if ($_POST["tipo"]=="usuario"){
+                    echo  '<form action="login.html"><input  class="btn btn-primary" type="submit"  value="Pulse aqui para acceder"></form>';
+                }else{
+                    echo  '<form action="login_admin.html"><input  class="btn btn-primary" type="submit"  value="Pulse aqui para acceder"></form>';
+                }
+                
                 exit;}
         } 
         
         else {
             include("header.php");
-            echo '<div class="container" style="margin-top:30px"><div class="alert alert-danger">Usuario no localizado. Puede darse de alta como usuario en</div>   <form action="login.html"><input  class="btn btn-primary" type="submit"  value="Pulse aqui para acceder"></form></div>';
+            if ($_POST["tipo"]=="usuario"){
+                echo '<div class="container" style="margin-top:30px"><div class="alert alert-danger">Usuario no localizado. Puede darse de alta como usuario en</div>   <form action="register.html"><input  class="btn btn-primary" type="submit"  value="Pulse aqui para acceder"></form></div>';
+            }else{
+                echo '<div class="container" style="margin-top:30px"><div class="alert alert-danger">Lo sentimos, usuario no localizado.</div>';
+                echo  '<form action="login_admin.html"><input  class="btn btn-primary" type="submit"  value="Pulse aqui para acceder"></form>';
+            }
+            
             exit;
         }
         
