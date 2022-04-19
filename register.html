@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width, initial-scale=1.0">
-    
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/bebas" type="text/css"/>
+
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/bebas" type="text/css" />
     <link rel="stylesheet" href="css/styles.css">
     <title>Register</title>
 </head>
+
 <body class="bodyInput">
-    
+
     <form action="registro.php" method="post">
-        <main class="box">     
-                <span class="text-center">Register</span>
-                <div class="input-container">		
-                    <input type="text" name="username" id="username" required=""/>
-                    <label>Nombre de usuario</label>
-                </div>
-                <div class="input-container">		
-                    <input type="password" name="password" id="password" required=""/>
-                    <label>Password</label>
-                </div>                
-            <div class="input-container">		
-                <input type="text" name="name" id="name" required=""/>
+        <main class="box">
+            <span class="text-center">Register</span>
+            <div class="input-container">
+                <input type="text" name="username" id="username" required="" />
+                <label>Nombre de usuario</label>
+            </div>
+            <div class="input-container">
+                <input type="password" name="password" id="password" required="" />
+                <label>Password</label>
+            </div>
+            <div class="input-container">
+                <input type="text" name="name" id="name" required="" />
                 <label>Nombre</label>
             </div>
-            <div class="input-container">		
-                <input type="text" name="surname" id="surname" required=""/>
+            <div class="input-container">
+                <input type="text" name="surname" id="surname" required="" />
                 <label>Apellido</label>
             </div>
             <div class="input-container">
-                <input type="email" name="email" required=""/>
+                <input type="email" name="email" required="" />
                 <label>Email</label>
             </div>
-            <div class="input-container">		
-                <input type="text" name="telephone" id="telephone" required=""/>
+            <div class="input-container">
+                <input type="text" name="telephone" id="telephone" required="" />
                 <label>Teléfono</label>
             </div>
-            <div class="input-container">		
-                <input type="text" name="nif" id="nif" required=""/>
+            <div class="input-container">
+                <input type="text" name="nif" id="nif" required="" />
                 <label>Nif</label>
             </div>
             <div class="agree">
                 <input type="checkbox" id="cbox1" value="checkbox">
-                <label> I agree with PHProgrammer Academy <a class="hasAccount" href="https://www.youtube.com/watch?v=HJXailvE17g">Terms of use</a></label>
+                <label> I agree with PHProgrammer Academy <a class="hasAccount"
+                        href="https://www.youtube.com/watch?v=HJXailvE17g">Terms of use</a></label>
             </div>
             <br>
             <button type="submit" class="button-22" name="submit">Registrarse</button>
             <p class="agree">¿Ya tienes una cuenta? <a class="hasAccount" href="login.html">Sign in</a></p>
+            <a class="noAccount" href="adios.php">Salir</a>
         </main>
     </form>
 </body>
+
 </html>

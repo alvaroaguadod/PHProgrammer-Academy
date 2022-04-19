@@ -43,14 +43,13 @@
         $sqlHorario = "INSERT INTO schedule (id_schedule, id_class, time_start, time_end, day) VALUES ($idHorario , $idClase, '$horario_inicio', '$horario_fin', '$dia_semana' )";
         $sqlHorario_insert = mysqli_query($db, $sqlHorario);
         //echo $sqlHorario;
-        if($sqlHorario_insert){
+        if ($sqlHorario_insert) {
           echo "<div class=\"alert alert-success\">Se ha registrado la clase " . $_POST["name_class"] . "</div>";
-        }else{
+        } else {
           echo "<div class=\"alert alert-error\">Ha ocurrido un error.</div>";
         }
         exit;
       }
-      
     };
     ?>
    <script>

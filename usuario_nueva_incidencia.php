@@ -11,7 +11,12 @@ if (isset($_POST["entrando"]) AND $_POST["entrando"]=="S" ){
     $sentencia="INSERT INTO incidences (id_student,description) VALUES (".$_SESSION["id"].",'".$_POST["description"]."')";
     //echo $sentencia;
     $result = $db->query($sentencia);
-    echo '<div class="alert alert-success">Incidencia enviada correctamente</div>';
+    if($result){
+      echo '<div class="alert alert-success">Incidencia enviada correctamente</div>';
+    }else{
+      echo '<div class="alert alert-error">Ha ocurrido un error</div>';
+    }
+    
     exit;
 }
 

@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/bebas" type="text/css"/>
-        <link rel="stylesheet" href="css/styles.css">
-        <title>Login</title>
-    </head>
-    <body class="bodyInput">
-        <div class="box">
-            <form id="login" action="validar.php" method="post">
-                <input type="hidden" name="tipo" value ="administrador" />
-                    <span class="text-center">Entrar como administrador</span>
-                <div class="input-container">
-                    <input type="text" id="login" name="login" required=""/>
-                    <label>Username</label>		
-                </div>
-                <div class="input-container">		
-                    <input type="text" id="password" name="password" required=""/>
-                    <label>Password</label>
-                </div>
-                <button type="submit" class="button-22">Login</button>
-                <br>
-                <a class="noAccount" href="adios.php">Salir</a>
 
-            </form>	
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/bebas" type="text/css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Login</title>
+</head>
+
+<body class="bodyInput">
+    <div class="box">
+        <form id="login" action="validar.php" method="post">
+            <input type="hidden" name="tipo" value="administrador" />
+            <span class="text-center">Entrar como administrador</span>
+            <div class="input-container">
+                <input type="text" id="login" name="login" required="" />
+                <label>Username</label>
+            </div>
+            <div class="input-container">
+                <input type="text" id="password" name="password" required="" />
+                <label>Password</label>
+            </div>
+            <button type="submit" class="button-22">Login</button>
+            <br>
+            <a class="noAccount" href="adios.php">Salir</a>
+
+        </form>
+    </div>
+</body>
+
 </html>
