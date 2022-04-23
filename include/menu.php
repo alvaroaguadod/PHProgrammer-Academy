@@ -16,6 +16,8 @@
           <a class="dropdown-item" href="nuevo_profesor.php">Profesor</a>
           <a class="dropdown-item" href="nuevo_estudiante.php">Estudiante</a>
           <a class="dropdown-item" href="nueva_clase.php">Clase</a>
+          <a class="dropdown-item" href="nuevo_exams.php">Examen</a>
+          <a class="dropdown-item" href="nuevo_works.php">Trabajo</a>
       </li>
 
 	  <li class="nav-item dropdown">

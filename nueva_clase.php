@@ -9,13 +9,9 @@
     $db = conectarse();
     if (isset($_POST["entrando"]) and $_POST["entrando"] == "s") {
 
-
-
       if (!isset($_SESSION)) {
         session_start();
       }
-
-
 
       $name_class = isset($_POST['name_class']) ? $_POST['name_class'] : false;
       $idCurso = isset($_POST['id_curso']) ? $_POST['id_curso'] : false;
