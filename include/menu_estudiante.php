@@ -19,12 +19,15 @@
         } 
         $sentencia="SELECT * FROM incidences WHERE response_read_at IS NULL AND response!='' AND id_student=".$_SESSION["id"];
         $result = $dbmenu->query($sentencia);
-        if (mysqli_num_rows($result)>0){ echo " style=\"color:red;font-weight:bolder\" "; };
+      //  if (mysqli_num_rows($result)>0){ echo " style=\"color:red;font-weight:bolder\" "; };
         ?>
         href="usuario_incidencias.php">Incidencias</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="mi_perfil.php">Mi perfil</a>
+        <a class="nav-link" href="expediente.php">Expediente</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="mi_perfil.php">Mi Perfil</a>
       </li>
       <!--
       <li class="nav-item dropdown">

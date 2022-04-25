@@ -60,7 +60,7 @@
      <div class="form-group">
        <form class="form form-control" name="login" action="nueva_clase.php" method="POST">
          <input type="hidden" name="entrando" value="s">
-         <label for="clase">Indique a que curso está asociada la clase</label>
+         <label for="clase">Indique a qué curso está asociada la clase</label>
          <select name="id_curso" class="form-control" required>
            <option value="">Elija un curso</option>
            <?php

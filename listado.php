@@ -9,11 +9,13 @@ $campos["students"]=array("Identificador","Usuario","Correo electrónico","Nombr
 $campos["courses"]=array("Identificador","Nombre del curso","Descripción","Fecha de inicio","Fecha fin","Activo");
 $campos["class"]=array("Identificador","Profesor", "Curso","Identificador Horario","Nombre","Color");
 $campos["teachers"]=array("Identificador","Nombre","Apellido","Teléfono","Nif","Correo electrónico");
+$campos["notifications"]=array("Identificador","id Alumno","Trabajo","Examen","Evaluación Continua","Nota Final");
 $valores=array();
 $valores["students"]=array("id","username","email","name","surname","telephone","nif","date_registered");
 $valores["courses"]=array("id_course","name","description","date_start","date_end","active");
 $valores["class"]=array("id_class","teacher", "course","id_schedule","name","color");
 $valores["teachers"]=array("id_teacher","name","surname","telephone","nif","email");
+$valores["notifications"]=array("id_notification","id_student","work","exam","continuous_assessment","final_note");
 
 ?>
 <script>

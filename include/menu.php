@@ -29,6 +29,7 @@
           <a class="dropdown-item" href="listado.php?tabla=courses&tipo=Cursos">Listado Cursos</a>
           <a class="dropdown-item" href="listado.php?tabla=teachers&tipo=Profesores">Listado Profesores</a>
           <a class="dropdown-item" href="listado.php?tabla=class&tipo=Clases">Listado Clases</a>
+          <a class="dropdown-item" href="listado.php?tabla=notifications&tipo=Expediente">Expediente</a>
       </li>
  
       <li class="nav-item dropdown">
@@ -57,10 +58,10 @@
           die('Connect Error (' . $dbmenu->connect_errno . ') '
             . $mysqli->connect_error);
         } 
-        $sentencia="SELECT * FROM incidences WHERE incidence_read_at IS NULL";
+     /*   $sentencia="SELECT * FROM incidences WHERE incidence_read_at IS NULL";
         $result = $dbmenu->query($sentencia);
         if (mysqli_num_rows($result)>0){ echo " style=\"color:red;font-weight:bolder\" "; };
-        ?>
+        */?>
          href="incidencias.php">Incidencias</a>
       </li>
       <li class="nav-item">

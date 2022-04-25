@@ -8,7 +8,7 @@ $db=conectarse();
 echo '<div class="container" style="margin-top:30px">';
 $sentencia="SELECT * FROM incidences WHERE id_student=".$_SESSION["id"];
 $result = $db->query($sentencia);
-if (mysqli_num_rows($result)==0){
+//if (mysqli_num_rows($result)==0){
     echo '<div class="alert alert-info">No hay ninguna </div>';
 }
 else{
